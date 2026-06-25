@@ -2,9 +2,9 @@
   "package": "pediatric-asthma-ventilation-simulator",
   "version": "1.8.1",
   "version_tag": "v1_8_1",
-  "generated_utc": "2026-06-25T05:09:29+00:00",
-  "python": "3.12.3",
-  "platform": "linux",
+  "generated_utc": "2026-06-25T14:36:02+00:00",
+  "python": "3.14.5",
+  "platform": "win32",
   "steps": [
     {
       "step": "pytest",
@@ -14,19 +14,19 @@
     },
     {
       "step": "run_all_scenarios",
-      "command": "python src/run_all_scenarios.py",
+      "command": "python src\\run_all_scenarios.py",
       "returncode": 0,
       "ok": true
     },
     {
       "step": "generate_paper_figures",
-      "command": "python src/generate_paper_figures.py",
+      "command": "python src\\generate_paper_figures.py",
       "returncode": 0,
       "ok": true
     },
     {
       "step": "sensitivity_analysis",
-      "command": "python src/sensitivity_analysis.py",
+      "command": "python src\\sensitivity_analysis.py",
       "returncode": 0,
       "ok": true
     }
@@ -35,122 +35,122 @@
   "stale_artifacts": [],
   "figures": {
     "Figure_1_RR_Sweep.png": {
-      "sha256": "e27b8b7239fae1edc870a7465c65fafd0a7395d6dd0b8ec72598462b4da4452e",
-      "bytes": 246717
+      "sha256": "0be07446ff0d0353758db5a259c2d34a510f701ef372883b6cec83a9d7d7d286",
+      "bytes": 243394
     },
     "Figure_2_AutoPEEP_Controlled_vs_HighRR.png": {
-      "sha256": "039c8a617acc20f247a17dd97078b1b5a4a61e514bafdea44ca9c69def023814",
-      "bytes": 74359
+      "sha256": "3d4a2dc0d1be64b7e4c8b539491f196f12a196f915d178b3dcd709952998eb58",
+      "bytes": 67324
     },
     "Figure_3_PaCO2_Controlled_vs_HighRR.png": {
-      "sha256": "9befaf8f7683d4eb97e0fbfe5b97e5480db4aa14b8fa052f22336b38304a9361",
-      "bytes": 104762
+      "sha256": "dcb4a27647f1846fc139d1532b0aea3815a0cf71e6c1334ab0ae245a27511af0",
+      "bytes": 95406
     },
     "Figure_4_PaCO2_EtCO2_SilentChest.png": {
-      "sha256": "5b06d7b705be9fb5a2cdcea7eec17a96f5196676cf560348aa07ddee98500db9",
-      "bytes": 86177
+      "sha256": "2e41d73c3bb6481d3c1669aaed5ed6833a1318d82f263cde311f1878d6a6afab",
+      "bytes": 77636
     },
     "Figure_5_PEEP_Titration.png": {
-      "sha256": "90f0d733dd8684111805702e39ea743c5a17c2bce2c8514fb466e13abab2e907",
-      "bytes": 148421
+      "sha256": "a50ce43431e6358baa9cde5382492742cefdb084fd084f6441e7b603f37ea431",
+      "bytes": 133352
     },
     "Figure_S1_Hyperinflation_Proxy.png": {
-      "sha256": "94558e83784272b1ee23b42991c4bbdcdbeb4056943fd803a9d65653b569770c",
-      "bytes": 83638
+      "sha256": "8a4c439f51f5345bc9cbe0fabb512619a921a060288f1fa89765f515280ea532",
+      "bytes": 75161
     },
     "Figure_S2_MAP_PostIntubation_Collapse.png": {
-      "sha256": "8701f637cd0dff09c6759e4e977911d9e06d41ade8b4d2d1c113d5efbef86270",
-      "bytes": 75895
+      "sha256": "c4dccd2c09dfc554851f320ef5c55b7adbf121886d4362ec11856027f29ff955",
+      "bytes": 65026
     },
     "Figure_S3_PIP_Pplat_Gap.png": {
-      "sha256": "92a50f555605f7d87cf490931ce5790e3aeedc0be8bb322677c0a9dc40006dc5",
-      "bytes": 73396
+      "sha256": "66f8a90ed7a2f3731c777c2d6636e0ef2d359256feff4c2ced7739d58018e932",
+      "bytes": 66335
     },
     "Figure_S4_AutoPEEP_Sensitivity.png": {
-      "sha256": "01eef8a2f96c25cfe3ba719a6ede4587543756e3de0a6ffc92c83b7c01e8b04b",
-      "bytes": 79765
+      "sha256": "8c3f4ae9e4d6a61a781202f7d29357be49d5291616ac3ccdfc3c73ed61d483e7",
+      "bytes": 69645
     },
     "Figure_S4_PaCO2_Sensitivity.png": {
-      "sha256": "e1f4669560367285aaa412d9a0ab93a0d60bc03ab4d7e769181135d47c32087d",
-      "bytes": 86673
+      "sha256": "7d99249dfe08d9f580e098c558bb674e4e6b1b3a35c767fe734c594b14677970",
+      "bytes": 75009
     },
     "Figure_S5_Model_Architecture.png": {
-      "sha256": "a33496f5b9377427afa817df5c9fad88e53962d7d5063c0feef81ad7b74a04cf",
-      "bytes": 175282
+      "sha256": "88d1562820eb76648543bb7011c35734dee42c33d5015607e8219264367da303",
+      "bytes": 157976
     }
   },
   "output_csvs": {
     "excess_external_peep_passive_timeseries.csv": {
-      "sha256": "080ad71f3b94bdce6600c6701c975f760375a1cda80fa62a39217a18ea4f77c3",
-      "bytes": 246938
+      "sha256": "3d7e87011a09af3218aa17d5ecdb02ea74853069a07b784016844d933a66015c",
+      "bytes": 246937
     },
     "figure_high_rr_dynamic_hyperinflation_v1_8_1.csv": {
-      "sha256": "c15617ff0765b9d8bfc56e08ea53f3c67d8f599dd6c2ffe88ebb15c729ce176f",
-      "bytes": 304119
+      "sha256": "5eb69ee5de60ba8c12b2d4249c8b4f576151ddf433cd34d4936064512e013159",
+      "bytes": 304662
     },
     "figure_post_intubation_collapse_v1_8_1.csv": {
-      "sha256": "cac8d3506967f87eec180f80ed8b1b7b90df45bcefa32cfa75d166403c6506fa",
-      "bytes": 343538
+      "sha256": "dc7e395697396006d9bc0b45c650d6be88503086b5c242c41a077fbceedf2747",
+      "bytes": 344141
     },
     "figure_safe_controlled_hypoventilation_v1_8_1.csv": {
-      "sha256": "263af10b44c903524da4ab5fd82babd84bf8f00b46db1e49609722313955293c",
-      "bytes": 397708
+      "sha256": "9e9bc73dba9ea48e3dc0715e234c61fc0af6c6ab245e6c038d8504d6915999b4",
+      "bytes": 398424
     },
     "figure_silent_chest_low_etco2_v1_8_1.csv": {
-      "sha256": "486c5df8095f74ac283a04111bd1761680c05ef632a3ba3462d126d693e1d3c4",
-      "bytes": 203861
+      "sha256": "5973dc687685123d4afddeaf4a6ff79d912f892befe5fe54c3716a93b907861a",
+      "bytes": 204224
     },
     "figure_spontaneous_autopeep_peep_titration_v1_8_1.csv": {
-      "sha256": "4a52ce26eacab59336ac799d70fd24c3f2b0691401f2552d8bb6e57866e42eb3",
-      "bytes": 314717
+      "sha256": "c42ee9de18eebe8db3c000d54a45dca4231a7c0e52eae64488fed4d2fffc2f12",
+      "bytes": 315252
     },
     "high_rr_dynamic_hyperinflation_timeseries.csv": {
-      "sha256": "ba36da94d6f9bcaec05bd89959918c108cc58f12a4d8aecf19fe9ae6cdb1e25a",
-      "bytes": 245711
+      "sha256": "c1ca801d9e4f170b94458771bd550bbcc7a8a10746a4c559bc8995fe4d9c5b82",
+      "bytes": 245712
     },
     "high_vt_barotrauma_risk_timeseries.csv": {
-      "sha256": "bb1cb287594ed48d1549e29d89e99c0a5a8ad039a97014f5405ca998da4d628f",
-      "bytes": 253218
+      "sha256": "805b5cdf4a6e60da796d3f0b433f8564b171539a01e8380ecb74081cb6bcd769",
+      "bytes": 253223
     },
     "ketamine_bronchodilation_response_timeseries.csv": {
-      "sha256": "456e91ac45e8d41338edc74a551ecb60ab13505bc20edf3af26326a5a4986eef",
-      "bytes": 345815
+      "sha256": "ccfb57275bdd37e2dc99e12731f9e5b30aaec9b55bd9792240cc138953a77186",
+      "bytes": 345816
     },
     "peep_sweep_spontaneous_v1_8_1.csv": {
-      "sha256": "db259593472bf2720564f334dec054935437104c2648773ff2dc0618ebe38a98",
-      "bytes": 373
+      "sha256": "a51bc167189f135f54925f8bd8194830a46c3bcf156f62c9be7be4fca9e1c0c6",
+      "bytes": 381
     },
     "post_intubation_collapse_timeseries.csv": {
-      "sha256": "c174a7a2ca9bf78a7baf2ac907e7ccd8274e10dc36a766fd13bcaeba83d8d5cd",
+      "sha256": "a4387d21fa1ade2468b3294b76dda17762a45e95ae33e1baa23a97c7cb96dd36",
       "bytes": 295754
     },
     "rr_sweep_severe_obstruction_v1_8_1.csv": {
-      "sha256": "404825657a6c83ddf1cb45440fdb418159e6b86a7bd78a76a2430a4b323d99e3",
-      "bytes": 527
+      "sha256": "1661cecc8618815229ccc2368c359aad6df39f6c334e83ec5ab67651671022ee",
+      "bytes": 546
     },
     "safe_controlled_hypoventilation_timeseries.csv": {
-      "sha256": "1fa67ac0c77e3b41c3825a569778fc12f3d68881c336eeb5d8787e5586152a26",
-      "bytes": 316266
+      "sha256": "6461b8d4a1850891b389c47f8c8624ae6453603f324443e5c2e79973ea85f3d9",
+      "bytes": 316260
     },
     "scenario_summary_v1_8_1.csv": {
       "sha256": "6bd0b7ad6db0f2e1ab61cc7c13b86a3de916df0327c75d3e062ac65a71ce2ade",
       "bytes": 1757
     },
     "sensitivity_analysis_v1_8_1.csv": {
-      "sha256": "e350991ef29560e55d4b8f1e652b24ba5c2552b5d94c11cdbf39e7923e9c5795",
-      "bytes": 911
+      "sha256": "dfbf86f9ca2ad6e9ebeb4951b0a7d0a234367c08f72e7e1452e189681204d770",
+      "bytes": 918
     },
     "severe_obstruction_rr_reference_timeseries.csv": {
       "sha256": "48f8f1ef299884c00214c4a4a721c37e8ebadf2b13e3ad59fc4ef2b051c81901",
       "bytes": 217363
     },
     "silent_chest_low_etco2_timeseries.csv": {
-      "sha256": "ded8ed698b8e68eaabf931a09b83d86144780ccfbf331f6a4d1f569c722260ad",
-      "bytes": 165770
+      "sha256": "191af08d9ac56810ba2e2b2384b5e1b69c49c007b8d8b6289acad8aefe855449",
+      "bytes": 165773
     },
     "spontaneous_autopeep_peep_titration_timeseries.csv": {
-      "sha256": "c44bba6dfa70376d78c974c1dc17badf225f3b12fbf5b650f3a00b07eebc1a80",
-      "bytes": 259031
+      "sha256": "6afc597043bd48705da694e1c53e52166e77aba55bacc57f90eb26cf640b169f",
+      "bytes": 259026
     }
   }
 }
