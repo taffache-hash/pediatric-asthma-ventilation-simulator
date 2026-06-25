@@ -1,0 +1,156 @@
+{
+  "package": "pediatric-asthma-ventilation-simulator",
+  "version": "1.8.1",
+  "version_tag": "v1_8_1",
+  "generated_utc": "2026-06-25T05:09:29+00:00",
+  "python": "3.12.3",
+  "platform": "linux",
+  "steps": [
+    {
+      "step": "pytest",
+      "command": "python -m pytest -q",
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "step": "run_all_scenarios",
+      "command": "python src/run_all_scenarios.py",
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "step": "generate_paper_figures",
+      "command": "python src/generate_paper_figures.py",
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "step": "sensitivity_analysis",
+      "command": "python src/sensitivity_analysis.py",
+      "returncode": 0,
+      "ok": true
+    }
+  ],
+  "all_steps_ok": true,
+  "stale_artifacts": [],
+  "figures": {
+    "Figure_1_RR_Sweep.png": {
+      "sha256": "e27b8b7239fae1edc870a7465c65fafd0a7395d6dd0b8ec72598462b4da4452e",
+      "bytes": 246717
+    },
+    "Figure_2_AutoPEEP_Controlled_vs_HighRR.png": {
+      "sha256": "039c8a617acc20f247a17dd97078b1b5a4a61e514bafdea44ca9c69def023814",
+      "bytes": 74359
+    },
+    "Figure_3_PaCO2_Controlled_vs_HighRR.png": {
+      "sha256": "9befaf8f7683d4eb97e0fbfe5b97e5480db4aa14b8fa052f22336b38304a9361",
+      "bytes": 104762
+    },
+    "Figure_4_PaCO2_EtCO2_SilentChest.png": {
+      "sha256": "5b06d7b705be9fb5a2cdcea7eec17a96f5196676cf560348aa07ddee98500db9",
+      "bytes": 86177
+    },
+    "Figure_5_PEEP_Titration.png": {
+      "sha256": "90f0d733dd8684111805702e39ea743c5a17c2bce2c8514fb466e13abab2e907",
+      "bytes": 148421
+    },
+    "Figure_S1_Hyperinflation_Proxy.png": {
+      "sha256": "94558e83784272b1ee23b42991c4bbdcdbeb4056943fd803a9d65653b569770c",
+      "bytes": 83638
+    },
+    "Figure_S2_MAP_PostIntubation_Collapse.png": {
+      "sha256": "8701f637cd0dff09c6759e4e977911d9e06d41ade8b4d2d1c113d5efbef86270",
+      "bytes": 75895
+    },
+    "Figure_S3_PIP_Pplat_Gap.png": {
+      "sha256": "92a50f555605f7d87cf490931ce5790e3aeedc0be8bb322677c0a9dc40006dc5",
+      "bytes": 73396
+    },
+    "Figure_S4_AutoPEEP_Sensitivity.png": {
+      "sha256": "01eef8a2f96c25cfe3ba719a6ede4587543756e3de0a6ffc92c83b7c01e8b04b",
+      "bytes": 79765
+    },
+    "Figure_S4_PaCO2_Sensitivity.png": {
+      "sha256": "e1f4669560367285aaa412d9a0ab93a0d60bc03ab4d7e769181135d47c32087d",
+      "bytes": 86673
+    },
+    "Figure_S5_Model_Architecture.png": {
+      "sha256": "a33496f5b9377427afa817df5c9fad88e53962d7d5063c0feef81ad7b74a04cf",
+      "bytes": 175282
+    }
+  },
+  "output_csvs": {
+    "excess_external_peep_passive_timeseries.csv": {
+      "sha256": "080ad71f3b94bdce6600c6701c975f760375a1cda80fa62a39217a18ea4f77c3",
+      "bytes": 246938
+    },
+    "figure_high_rr_dynamic_hyperinflation_v1_8_1.csv": {
+      "sha256": "c15617ff0765b9d8bfc56e08ea53f3c67d8f599dd6c2ffe88ebb15c729ce176f",
+      "bytes": 304119
+    },
+    "figure_post_intubation_collapse_v1_8_1.csv": {
+      "sha256": "cac8d3506967f87eec180f80ed8b1b7b90df45bcefa32cfa75d166403c6506fa",
+      "bytes": 343538
+    },
+    "figure_safe_controlled_hypoventilation_v1_8_1.csv": {
+      "sha256": "263af10b44c903524da4ab5fd82babd84bf8f00b46db1e49609722313955293c",
+      "bytes": 397708
+    },
+    "figure_silent_chest_low_etco2_v1_8_1.csv": {
+      "sha256": "486c5df8095f74ac283a04111bd1761680c05ef632a3ba3462d126d693e1d3c4",
+      "bytes": 203861
+    },
+    "figure_spontaneous_autopeep_peep_titration_v1_8_1.csv": {
+      "sha256": "4a52ce26eacab59336ac799d70fd24c3f2b0691401f2552d8bb6e57866e42eb3",
+      "bytes": 314717
+    },
+    "high_rr_dynamic_hyperinflation_timeseries.csv": {
+      "sha256": "ba36da94d6f9bcaec05bd89959918c108cc58f12a4d8aecf19fe9ae6cdb1e25a",
+      "bytes": 245711
+    },
+    "high_vt_barotrauma_risk_timeseries.csv": {
+      "sha256": "bb1cb287594ed48d1549e29d89e99c0a5a8ad039a97014f5405ca998da4d628f",
+      "bytes": 253218
+    },
+    "ketamine_bronchodilation_response_timeseries.csv": {
+      "sha256": "456e91ac45e8d41338edc74a551ecb60ab13505bc20edf3af26326a5a4986eef",
+      "bytes": 345815
+    },
+    "peep_sweep_spontaneous_v1_8_1.csv": {
+      "sha256": "db259593472bf2720564f334dec054935437104c2648773ff2dc0618ebe38a98",
+      "bytes": 373
+    },
+    "post_intubation_collapse_timeseries.csv": {
+      "sha256": "c174a7a2ca9bf78a7baf2ac907e7ccd8274e10dc36a766fd13bcaeba83d8d5cd",
+      "bytes": 295754
+    },
+    "rr_sweep_severe_obstruction_v1_8_1.csv": {
+      "sha256": "404825657a6c83ddf1cb45440fdb418159e6b86a7bd78a76a2430a4b323d99e3",
+      "bytes": 527
+    },
+    "safe_controlled_hypoventilation_timeseries.csv": {
+      "sha256": "1fa67ac0c77e3b41c3825a569778fc12f3d68881c336eeb5d8787e5586152a26",
+      "bytes": 316266
+    },
+    "scenario_summary_v1_8_1.csv": {
+      "sha256": "6bd0b7ad6db0f2e1ab61cc7c13b86a3de916df0327c75d3e062ac65a71ce2ade",
+      "bytes": 1757
+    },
+    "sensitivity_analysis_v1_8_1.csv": {
+      "sha256": "e350991ef29560e55d4b8f1e652b24ba5c2552b5d94c11cdbf39e7923e9c5795",
+      "bytes": 911
+    },
+    "severe_obstruction_rr_reference_timeseries.csv": {
+      "sha256": "48f8f1ef299884c00214c4a4a721c37e8ebadf2b13e3ad59fc4ef2b051c81901",
+      "bytes": 217363
+    },
+    "silent_chest_low_etco2_timeseries.csv": {
+      "sha256": "ded8ed698b8e68eaabf931a09b83d86144780ccfbf331f6a4d1f569c722260ad",
+      "bytes": 165770
+    },
+    "spontaneous_autopeep_peep_titration_timeseries.csv": {
+      "sha256": "c44bba6dfa70376d78c974c1dc17badf225f3b12fbf5b650f3a00b07eebc1a80",
+      "bytes": 259031
+    }
+  }
+}

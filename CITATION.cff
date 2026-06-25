@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this educational simulator in teaching, research, or derivative software, please cite it."
+title: "Pediatric Status Asthmaticus Ventilation Simulator"
+version: 1.8.1
+date-released: 2026-06-24
+authors:
+  - family-names: "Taffache"
+    given-names: "Paolo"
+license: "Apache-2.0"
+keywords:
+  - pediatric intensive care
+  - status asthmaticus
+  - mechanical ventilation
+  - auto-PEEP
+  - dynamic hyperinflation
+  - simulation
+  - open-source software
+abstract: >
+  Open-source educational simulator for ventilated pediatric status asthmaticus,
+  focused on expiratory time constants, dynamic hyperinflation, auto-PEEP,
+  plateau pressure, gas-exchange trade-offs, and hemodynamic compromise.
+  This release reports internal verification only; it is not clinical decision
+  support and has not been clinically validated.

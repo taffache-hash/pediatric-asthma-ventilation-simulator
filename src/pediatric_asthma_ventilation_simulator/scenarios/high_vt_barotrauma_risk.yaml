@@ -1,0 +1,51 @@
+schema_version: '0.3'
+scenario_id: high_vt_barotrauma_risk
+title: Excessive tidal volume and plateau pressure
+category: ventilator_error
+duration_min: 45
+time_step_s: 5
+patient:
+  age_years: 10
+  weight_kg: 32
+  frc_ml_per_kg: 25
+  vco2_ml_kg_min: 5.2
+  dead_space_ml_kg: 2.2
+  map_baseline_mmHg: 70
+  preload_status: normal
+  patient_effort: passive
+airway_mechanics:
+  obstruction_severity: severe
+  raw_insp_cmH2O_s_L: 32
+  raw_exp_multiplier: 1.7
+  crs_ml_cmH2O_kg: 0.55
+  secretions_factor: 1.0
+  heterogeneity_factor: 1.2
+ventilator:
+  mode: VCV
+  vt_ml_kg: 12.5
+  rr_bpm: 14
+  peep_cmH2O: 3
+  ie_ratio: '1:3'
+  insp_flow_l_min: 65
+  inspiratory_pause_s: 0.0
+therapies:
+  continuous_albuterol: true
+  ipratropium: true
+  magnesium:
+    enabled: false
+  ketamine:
+    enabled: false
+  steroid:
+    enabled: true
+    minutes_since_first_dose: 90
+expected_direction:
+  vei: high
+  pplat: rises_above_warning
+  ppeak: high
+  map: mild_to_moderate_fall
+  barotrauma_risk: high
+educational_message: This is a PRESSURE-EXPOSURE scenario, not a gas-trapping
+  scenario. A large tidal volume can normalize the CO2 surrogate while driving the
+  plateau-pressure surrogate into the warning zone; auto-PEEP stays low because
+  expiratory time is adequate. The teaching point is barotrauma risk from delivered
+  volume/pressure, distinct from the dynamic-hyperinflation scenarios.

@@ -1,0 +1,51 @@
+schema_version: '0.4'
+scenario_id: spontaneous_autopeep_peep_titration
+title: Counterbalancing PEEP to unload trigger work in a spontaneously breathing patient
+category: peep_titration
+duration_min: 45
+time_step_s: 5
+patient:
+  age_years: 9
+  weight_kg: 28
+  frc_ml_per_kg: 25
+  vco2_ml_kg_min: 5.2
+  dead_space_ml_kg: 2.2
+  map_baseline_mmHg: 68
+  preload_status: normal
+  patient_effort: spontaneous
+airway_mechanics:
+  obstruction_severity: moderate_to_severe
+  raw_insp_cmH2O_s_L: 32
+  raw_exp_multiplier: 1.6
+  crs_ml_cmH2O_kg: 1.1
+  secretions_factor: 1.0
+  heterogeneity_factor: 1.1
+ventilator:
+  mode: PSV_CPAP
+  pressure_support_cmH2O: 10
+  rr_bpm: 30
+  backup_rr_bpm: 8
+  peep_cmH2O: 5
+  ie_ratio: patient_determined
+  insp_flow_l_min: 50
+  trigger_sensitivity: medium
+therapies:
+  continuous_albuterol: true
+  ipratropium: true
+  magnesium:
+    enabled: false
+  ketamine:
+    enabled: false
+  steroid:
+    enabled: true
+    minutes_since_first_dose: 120
+expected_direction:
+  trigger_work: falls_as_peep_approaches_intrinsic_peep
+  autopeep: not_markedly_worse_within_guard
+  external_peep_excess: zero_until_peep_exceeds_intrinsic
+  map: preserved_until_peep_exceeds_intrinsic
+  synchrony: improves
+educational_message: In a spontaneously breathing obstructed patient with intrinsic
+  PEEP, applied (counterbalancing) PEEP up to the level of auto-PEEP reduces the
+  inspiratory threshold load with little hemodynamic cost; PEEP set above intrinsic
+  PEEP adds to total alveolar pressure and begins to impair venous return.

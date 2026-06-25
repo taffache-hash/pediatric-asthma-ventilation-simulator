@@ -1,0 +1,52 @@
+schema_version: '0.4'
+scenario_id: safe_controlled_hypoventilation
+title: Controlled hypoventilation with prolonged expiratory time
+category: baseline_safe
+duration_min: 60
+time_step_s: 5
+patient:
+  age_years: 8
+  weight_kg: 25
+  frc_ml_per_kg: 25
+  vco2_ml_kg_min: 4.15
+  dead_space_ml_kg: 2.2
+  map_baseline_mmHg: 65
+  preload_status: normal
+  patient_effort: passive
+airway_mechanics:
+  obstruction_severity: severe
+  raw_insp_cmH2O_s_L: 50
+  raw_exp_multiplier: 2.0
+  crs_ml_cmH2O_kg: 0.78
+  secretions_factor: 1.0
+  heterogeneity_factor: 1.4
+ventilator:
+  mode: VCV
+  vt_ml_kg: 6.5
+  rr_bpm: 14
+  peep_cmH2O: 3
+  ie_ratio: '1:4'
+  insp_flow_l_min: 60
+  inspiratory_pause_s: 0.0
+therapies:
+  continuous_albuterol: true
+  ipratropium: true
+  magnesium:
+    enabled: false
+  ketamine:
+    enabled: false
+  steroid:
+    enabled: true
+    minutes_since_first_dose: 60
+expected_direction:
+  autopeep: modest_but_real_3_to_6_cmH2O
+  pplat: elevated_but_below_30
+  ppeak: high_resistive
+  pip_minus_pplat: large
+  paco2: permissive_hypercapnia_stable
+  ph: above_7_18
+  map: preserved
+educational_message: Do not chase rapid normocapnia. With severe obstruction even
+  a lung-protective strategy carries modest intrinsic PEEP and a wide PIP-to-plateau
+  gap; adequate expiratory time keeps plateau pressure and hemodynamics safe while
+  accepting permissive hypercapnia.

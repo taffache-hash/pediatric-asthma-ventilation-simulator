@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  minimal-tests:
+    # Core library + validation without Streamlit installed: smoke tests are
+    # expected to skip, exercising the minimal-environment path.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install core dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml jsonschema pandas matplotlib pytest
+      - name: Install package
+        run: pip install -e .
+      - name: Run tests (Streamlit smoke tests skip here)
+        run: pytest -q -rs
+
+  full-app-tests:
+    # Full dependency set incl. Streamlit: the Streamlit smoke tests run for real,
+    # and the wheel build/install tests verify the installed package.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install all dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest build wheel
+      - name: Install package
+        run: pip install -e .
+      - name: Run full test suite
+        run: pytest -q -rs
+      - name: Reproducibility pipeline
+        run: |
+          export MPLBACKEND=Agg
+          python scripts/reproduce_all.py

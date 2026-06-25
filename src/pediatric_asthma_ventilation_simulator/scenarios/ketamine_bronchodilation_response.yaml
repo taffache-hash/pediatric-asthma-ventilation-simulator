@@ -1,0 +1,49 @@
+schema_version: '0.3'
+scenario_id: ketamine_bronchodilation_response
+title: Ketamine-associated gradual bronchodilation scenario
+category: therapy_response
+duration_min: 60
+time_step_s: 5
+patient:
+  age_years: 8
+  weight_kg: 24
+  frc_ml_per_kg: 25
+  vco2_ml_kg_min: 5.5
+  dead_space_ml_kg: 2.2
+  map_baseline_mmHg: 64
+  preload_status: normal
+  patient_effort: passive
+airway_mechanics:
+  obstruction_severity: severe
+  raw_insp_cmH2O_s_L: 40
+  raw_exp_multiplier: 1.7
+  crs_ml_cmH2O_kg: 1.0
+  secretions_factor: 1.1
+  heterogeneity_factor: 1.2
+ventilator:
+  mode: PCV
+  pressure_control_cmH2O_above_peep: 18
+  rr_bpm: 11
+  peep_cmH2O: 3
+  ie_ratio: '1:4'
+  insp_flow_l_min: 60
+  inspiratory_pause_s: 0.0
+therapies:
+  continuous_albuterol: true
+  ipratropium: true
+  magnesium:
+    enabled: false
+  ketamine:
+    enabled: true
+    bolus_mg_kg: 1.5
+    infusion_mg_kg_h: 1.0
+  steroid:
+    enabled: true
+    minutes_since_first_dose: 90
+expected_direction:
+  raw: gradually_falls
+  ppeak: falls_before_paco2
+  delivered_vt_in_pcv: rises_modestly
+  map: preserved_or_mildly_increased
+educational_message: 'Ketamine is modeled conservatively: possible gradual reduction
+  in resistance, not immediate normalization.'

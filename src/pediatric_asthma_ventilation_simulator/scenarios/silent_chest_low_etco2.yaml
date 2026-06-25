@@ -1,0 +1,53 @@
+schema_version: '0.3'
+scenario_id: silent_chest_low_etco2
+title: Silent chest with falsely reassuring low EtCO2 signal
+category: monitoring_pitfall
+duration_min: 30
+time_step_s: 5
+patient:
+  age_years: 5
+  weight_kg: 18
+  frc_ml_per_kg: 24
+  vco2_ml_kg_min: 4.5
+  dead_space_ml_kg: 2.5
+  map_baseline_mmHg: 60
+  preload_status: borderline
+  patient_effort: exhausted
+airway_mechanics:
+  obstruction_severity: severe
+  raw_insp_cmH2O_s_L: 55
+  raw_exp_multiplier: 1.5
+  crs_ml_cmH2O_kg: 0.85
+  secretions_factor: 1.5
+  heterogeneity_factor: 1.5
+ventilator:
+  mode: PCV
+  pressure_control_cmH2O_above_peep: 16
+  rr_bpm: 14
+  peep_cmH2O: 3
+  ie_ratio: '1:3'
+  insp_flow_l_min: 45
+  inspiratory_pause_s: 0.0
+therapies:
+  continuous_albuterol: true
+  ipratropium: true
+  magnesium:
+    enabled: true
+    bolus_mg_kg: 50
+  ketamine:
+    enabled: true
+    bolus_mg_kg: 1.0
+    infusion_mg_kg_h: 0.75
+  steroid:
+    enabled: true
+    minutes_since_first_dose: 45
+expected_direction:
+  delivered_vt: low
+  etco2: low_or_unreliable
+  paco2: high
+  ph: falls
+  risk: monitoring_pitfall_warning
+educational_message: A low or falling EtCO2 signal in near-silent severe obstruction
+  may reflect poor exhaled alveolar gas sampling rather than adequate ventilation.
+monitoring:
+  vq_mismatch_dead_space_fraction: 0.58

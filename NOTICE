@@ -1,0 +1,6 @@
+Pediatric Status Asthmaticus Ventilation Simulator
+Copyright 2026 Paolo Taffache
+
+This software is an educational physiology simulator. It is not a medical device,
+not clinical decision support, and must not be used to set ventilator parameters
+or guide care in real patients.

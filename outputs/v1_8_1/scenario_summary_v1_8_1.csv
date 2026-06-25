@@ -1,0 +1,10 @@
+n_points,duration_min,initial_autopeep_cmH2O,final_autopeep_cmH2O,max_autopeep_cmH2O,final_pplat_cmH2O,max_pplat_cmH2O,max_ppeak_cmH2O,min_map_mmHg,final_paco2_mmHg,max_paco2_mmHg,min_ph,max_vei_ml_kg,final_etco2_mmHg,max_global_risk_score,final_barotrauma_risk,final_hemodynamic_risk,final_ventilation_risk,unsafe_points,unsafe_any,final_safety_message,scenario_id
+541,45.0,1.37,1.15,1.42,23.34,23.34,24.0,54.77,52.3,56.3,7.281,11.7,46.0,0.18,warning,warning,low,0,False,,excess_external_peep_passive
+541,45.0,8.85,10.75,13.26,22.55,25.51,59.4,53.72,79.0,91.5,7.126,16.18,62.0,1.62,warning,low,warning,0,False,,high_rr_dynamic_hyperinflation
+541,45.0,1.63,1.21,1.68,31.09,31.75,64.69,67.23,33.1,33.4,7.455,13.22,29.1,2.32,warning,low,low,0,False,,high_vt_barotrauma_risk
+721,60.0,1.67,1.1,1.87,19.57,19.57,21.0,63.98,43.3,54.7,7.291,13.65,38.0,0.37,warning,low,low,0,False,,ketamine_bronchodilation_response
+601,20.0,13.9,30.0,30.0,65.0,65.0,90.0,18.0,180.0,180.0,6.947,43.46,108.6,10.98,critical,critical,critical,601,True,auto-PEEP display capped at 30 cmH2O; plateau pressure unsafe threshold exceeded; peak pressure unsafe threshold exceeded; critical gas-exchange threshold exceeded,post_intubation_collapse
+721,60.0,2.98,3.0,3.73,14.59,15.44,63.07,61.94,71.0,75.4,7.185,9.05,57.9,1.1,low,low,low,0,False,,safe_controlled_hypoventilation
+541,45.0,5.5,8.3,8.3,18.97,18.97,66.97,58.38,77.2,77.2,7.178,12.96,62.4,1.49,warning,low,warning,0,False,,severe_obstruction_rr_reference
+361,30.0,3.43,3.42,4.24,16.15,16.15,19.0,55.96,66.5,105.4,7.085,10.02,13.7,1.56,low,low,low,0,False,,silent_chest_low_etco2
+541,45.0,4.76,5.18,5.56,17.26,17.26,17.26,63.83,47.2,55.9,7.284,11.61,42.0,0.16,warning,low,low,0,False,,spontaneous_autopeep_peep_titration

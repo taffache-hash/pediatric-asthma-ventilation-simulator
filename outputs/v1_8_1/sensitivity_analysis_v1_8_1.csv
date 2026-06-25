@@ -1,0 +1,7 @@
+parameter,low_max_autopeep_cmH2O,base_max_autopeep_cmH2O,high_max_autopeep_cmH2O,low_max_pplat_cmH2O,base_max_pplat_cmH2O,high_max_pplat_cmH2O,low_max_ppeak_cmH2O,base_max_ppeak_cmH2O,high_max_ppeak_cmH2O,low_max_paco2_mmHg,base_max_paco2_mmHg,high_max_paco2_mmHg,low_min_map_mmHg,base_min_map_mmHg,high_min_map_mmHg
+Raw_insp -/+30%,4.46,8.3,13.04,14.51,18.97,24.48,48.11,66.97,86.88,59.4,77.2,102.7,61.65,58.38,53.29
+Crs -/+30%,6.37,8.3,10.03,19.44,18.97,19.52,67.44,66.97,67.52,62.2,77.2,92.8,60.22,58.38,56.07
+Heterogeneity -/+,5.42,8.3,12.0,15.64,18.97,23.24,63.64,66.97,71.24,62.7,77.2,99.3,60.93,58.38,54.24
+VT 5.5 / 8.0 mL/kg,6.59,8.3,11.34,15.68,18.97,24.81,63.68,66.97,72.81,98.1,77.2,61.6,58.36,58.38,56.5
+RR 14 / 30 bpm,4.46,8.3,16.8,14.51,18.97,28.86,62.51,66.97,76.86,84.8,77.2,86.4,60.74,58.38,51.38
+I:E 1:2 / 1:5,10.15,8.3,6.93,21.13,18.97,17.38,69.13,66.97,65.38,86.5,77.2,70.8,56.36,58.38,59.8

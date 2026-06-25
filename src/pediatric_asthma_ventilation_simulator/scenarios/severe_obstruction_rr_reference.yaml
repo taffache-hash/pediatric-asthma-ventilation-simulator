@@ -1,0 +1,48 @@
+schema_version: '0.4'
+scenario_id: severe_obstruction_rr_reference
+title: Severe-obstruction reference patient for same-patient respiratory-rate sweep
+category: internal_verification_reference
+duration_min: 45
+time_step_s: 5
+patient:
+  age_years: 8
+  weight_kg: 25
+  frc_ml_per_kg: 25
+  vco2_ml_kg_min: 4.15
+  dead_space_ml_kg: 2.2
+  map_baseline_mmHg: 65
+  preload_status: normal
+  patient_effort: passive
+airway_mechanics:
+  obstruction_severity: severe
+  raw_insp_cmH2O_s_L: 48
+  raw_exp_multiplier: 1.9
+  crs_ml_cmH2O_kg: 1.0
+  secretions_factor: 1.0
+  heterogeneity_factor: 1.35
+ventilator:
+  mode: VCV
+  vt_ml_kg: 6.5
+  rr_bpm: 20
+  peep_cmH2O: 3
+  ie_ratio: '1:3'
+  insp_flow_l_min: 60
+  inspiratory_pause_s: 0.0
+therapies:
+  continuous_albuterol: false
+  ipratropium: false
+  magnesium:
+    enabled: false
+  ketamine:
+    enabled: false
+  steroid:
+    enabled: false
+expected_direction:
+  paco2_vs_rr: u_shaped_nadir_around_rr_22_to_26
+  autopeep_vs_rr: monotonic_increase
+  pplat_vs_rr: monotonic_increase
+  map_vs_rr: monotonic_decrease
+educational_message: In the same severely obstructed patient, increasing respiratory
+  rate improves CO2 clearance only up to a point; beyond the nadir, shortened
+  expiratory time worsens dynamic hyperinflation and CO2 again, while auto-PEEP and
+  plateau pressure rise monotonically and mean arterial pressure falls.

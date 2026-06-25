@@ -1,0 +1,48 @@
+schema_version: '0.3'
+scenario_id: high_rr_dynamic_hyperinflation
+title: High respiratory rate causing dynamic hyperinflation
+category: ventilator_error
+duration_min: 45
+time_step_s: 5
+patient:
+  age_years: 8
+  weight_kg: 25
+  frc_ml_per_kg: 25
+  vco2_ml_kg_min: 5.5
+  dead_space_ml_kg: 2.2
+  map_baseline_mmHg: 65
+  preload_status: normal
+  patient_effort: passive
+airway_mechanics:
+  obstruction_severity: severe
+  raw_insp_cmH2O_s_L: 35
+  raw_exp_multiplier: 1.8
+  crs_ml_cmH2O_kg: 1.0
+  secretions_factor: 1.2
+  heterogeneity_factor: 1.4
+ventilator:
+  mode: VCV
+  vt_ml_kg: 7.0
+  rr_bpm: 26
+  peep_cmH2O: 3
+  ie_ratio: '1:2'
+  insp_flow_l_min: 50
+  inspiratory_pause_s: 0.2
+therapies:
+  continuous_albuterol: true
+  ipratropium: true
+  magnesium:
+    enabled: false
+  ketamine:
+    enabled: false
+  steroid:
+    enabled: true
+    minutes_since_first_dose: 30
+expected_direction:
+  autopeep: rises
+  trapped_volume: rises
+  pplat: rises_relative_to_safe_strategy
+  paco2: not_proportionally_improved
+  map: may_fall_or_remain_preserved_if_preload_is_normal
+educational_message: 'Increasing RR to correct CO2 shortens Te and can worsen the
+  real problem: dynamic hyperinflation.'

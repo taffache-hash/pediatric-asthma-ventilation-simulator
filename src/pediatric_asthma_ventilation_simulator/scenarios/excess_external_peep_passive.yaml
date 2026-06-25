@@ -1,0 +1,47 @@
+schema_version: '0.3'
+scenario_id: excess_external_peep_passive
+title: Excessive external PEEP in a passive obstructed patient
+category: peep_error
+duration_min: 45
+time_step_s: 5
+patient:
+  age_years: 7
+  weight_kg: 22
+  frc_ml_per_kg: 25
+  vco2_ml_kg_min: 5.8
+  dead_space_ml_kg: 2.2
+  map_baseline_mmHg: 62
+  preload_status: borderline
+  patient_effort: passive
+airway_mechanics:
+  obstruction_severity: severe
+  raw_insp_cmH2O_s_L: 36
+  raw_exp_multiplier: 1.8
+  crs_ml_cmH2O_kg: 1.0
+  secretions_factor: 1.0
+  heterogeneity_factor: 1.2
+ventilator:
+  mode: PCV
+  pressure_control_cmH2O_above_peep: 14
+  rr_bpm: 12
+  peep_cmH2O: 10
+  ie_ratio: '1:3'
+  insp_flow_l_min: 60
+  inspiratory_pause_s: 0.0
+therapies:
+  continuous_albuterol: true
+  ipratropium: true
+  magnesium:
+    enabled: false
+  ketamine:
+    enabled: false
+  steroid:
+    enabled: true
+    minutes_since_first_dose: 60
+expected_direction:
+  total_peep: rises
+  pplat: rises
+  delivered_vt: may_fall_in_pcv
+  map: falls
+educational_message: External PEEP is not automatically protective in passive severe
+  asthma; total PEEP and hemodynamics matter.

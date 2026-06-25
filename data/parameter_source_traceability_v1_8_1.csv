@@ -1,0 +1,17 @@
+parameter_or_claim,claim_or_model_use,supporting_refs,confidence,implementation_note
+model_kernel,Te/tau -> incomplete emptying -> trapped volume -> auto-PEEP,R02; R04; R05; R06,high,Core equation is not directly fit to patient data; it is a transparent educational surrogate.
+ventilator_default_VT,Low VT / pressure-limited ventilation; initial VT approximately 6-8 ml/kg in severe asthma ventilation guidance,R02; R03,moderate,Mostly adult/mixed severe-asthma sources; retain as conservative default.
+ventilator_default_RR,Low respiratory rate to permit expiration; RR increase should shorten Te and increase trapping in obstruction,R02; R04; R05,high,Direction is strong; exact pediatric rate must be adjustable.
+peep_default_and_caution,External PEEP 0-5 cmH2O default; ambivalent effect; may unload spontaneous trigger but worsen passive hyperinflation,R02; R06; R08,moderate,Model must separate passive and spontaneous scenarios.
+pplat_warning,Pplat target/warning around 30 cmH2O and critical >35 cmH2O,R02; R03,moderate,"Use as educational safety zone, not patient-specific alarm."
+permissive_hypercapnia,Accept elevated PaCO2 if pH/trajectory acceptable; avoid chasing normocapnia at cost of hyperinflation,R02; R03,high,Avoid treating PaCO2 surrogate as a clinical prediction.
+VEI_proxy_threshold,VEI >20 ml/kg as high-risk educational anchor,R02; R04,low_to_moderate,Adult/severe-asthma-derived; explicitly not validated as pediatric cutoff.
+occult_autopeep,Measured auto-PEEP can underestimate trapped gas in noncommunicating units,R02; R06,moderate,Justifies visible occult_autoPEEP component in model.
+pediatric_imv_context,Pediatric intubated asthma exists but is uncommon; use simulator for rare high-risk physiology education,R07; R09; R10; R11,high,Background only; not a calibration input.
+pressure_control_scenario,Pressure-controlled ventilation is represented in scenario library,R07,moderate,Retrospective pediatric series; scenario-level support only.
+pressure_support_spontaneous_scenario,Pressure-support/PEEP titration in spontaneous obstructed children is represented cautiously,R08,low_to_moderate,Small/older pediatric evidence; not a universal recommendation.
+magnesium_effect,Delayed modest airway-resistance reduction and possible hypotension at high exposure,R12; R16; R17,moderate,Evidence supportive but heterogeneous; not a PK/PD model.
+ketamine_effect,Gradual optional airway-resistance reduction with hemodynamic preservation; effect uncertain,R13; R14; R15,low_to_moderate,Cochrane evidence forces conservative wording; do not claim routine efficacy.
+steroid_effect,Minimal acute minute-to-minute bronchodilator effect; slower inflammation modifier,R01; R12,moderate,Use delayed onset; no instant mechanical improvement.
+picu_red_flags,"Hypercapnia, persistent hypoxemia, HFNC/NIV need, altered consciousness",R18; R19,moderate,"Pathway/guidance context, not model validation."
+etco2_paco2_gap,EtCO2 can be falsely reassuring in severe obstruction/dead-space states,R02; R03,moderate,"Keep as educational scenario, not capnography predictor."

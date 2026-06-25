@@ -1,0 +1,32 @@
+[project]
+name = "pediatric-asthma-ventilation-simulator"
+version = "1.8.1"
+description = "Transparent educational simulator of pediatric status asthmaticus ventilation trade-offs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Paolo Taffache"}]
+keywords = ["pediatric ICU", "asthma", "mechanical ventilation", "auto-PEEP", "simulation"]
+
+dependencies = [
+  "PyYAML==6.0.3",
+  "pandas==2.2.3",
+  "matplotlib==3.10.8",
+  "streamlit==1.35.0",
+  "jsonschema==4.26.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pediatric_asthma_ventilation_simulator*"]
+
+[tool.setuptools.package-data]
+pediatric_asthma_ventilation_simulator = ["scenarios/*.yaml"]

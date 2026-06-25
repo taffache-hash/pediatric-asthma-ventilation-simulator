@@ -1,0 +1,142 @@
+# JSON Schema (Draft 2020-12) for Pediatric Asthma Ventilation Simulator scenarios.
+# Version: 1.8.1
+#
+# This schema describes the ACTUAL structure consumed by the engine
+# (build_objects / simulate_scenario). The required-field lists mirror the
+# engine dataclasses exactly, so a scenario that passes this schema constructs
+# Patient/Mechanics/Ventilator without error. Range and safety constraints are
+# encoded here, so structural and input validation share one source of truth.
+# Ventilation-mode names are canonical UPPER_SNAKE_CASE; the validator
+# normalizes any alias/letter-case to this vocabulary before checking.
+#
+# Validated against every shipped scenario by test_release_schema_v1_8_1.py and
+# by test_schema_completeness_v1_8_1.py (schema-valid scenarios must also run).
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://github.com/ptaffache/pediatric-asthma-ventilation-simulator/scenario_schema_v1_8_1.yaml"
+title: "Pediatric asthma ventilation scenario"
+type: object
+additionalProperties: true   # tolerate descriptive top-level keys (educational_message, expected_*)
+
+required:
+  - scenario_id
+  - patient
+  - airway_mechanics
+  - ventilator
+
+properties:
+
+  schema_version: { type: string }
+  scenario_id: { type: string, minLength: 1 }
+  title: { type: string }
+  category: { type: string }
+
+  duration_min: { type: number, exclusiveMinimum: 0, maximum: 600 }
+  time_step_s: { type: number, exclusiveMinimum: 0, maximum: 60 }
+
+  patient:
+    type: object
+    additionalProperties: false   # engine builds Patient(**patient); extras would crash
+    required:
+      - age_years
+      - weight_kg
+      - frc_ml_per_kg
+      - vco2_ml_kg_min
+      - dead_space_ml_kg
+      - map_baseline_mmHg
+      - preload_status
+      - patient_effort
+    properties:
+      age_years: { type: number, minimum: 0, maximum: 25 }
+      weight_kg: { type: number, exclusiveMinimum: 0, maximum: 150 }
+      frc_ml_per_kg: { type: number, exclusiveMinimum: 0 }
+      vco2_ml_kg_min: { type: number, exclusiveMinimum: 0 }
+      dead_space_ml_kg: { type: number, minimum: 0 }
+      map_baseline_mmHg: { type: number, exclusiveMinimum: 0 }
+      preload_status: { type: string, enum: [low, reduced, borderline, normal, high] }
+      patient_effort: { type: string, enum: [passive, passive_after_sedation, spontaneous, mixed, exhausted] }
+
+  airway_mechanics:
+    type: object
+    additionalProperties: false   # engine builds Mechanics(**airway_mechanics)
+    required:
+      - obstruction_severity
+      - raw_insp_cmH2O_s_L
+      - raw_exp_multiplier
+      - crs_ml_cmH2O_kg
+      - secretions_factor
+      - heterogeneity_factor
+    properties:
+      obstruction_severity: { type: string, enum: [none, mild, moderate, moderate_to_severe, severe, critical] }
+      raw_insp_cmH2O_s_L: { type: number, exclusiveMinimum: 0 }
+      raw_exp_multiplier: { type: number, exclusiveMinimum: 0 }
+      crs_ml_cmH2O_kg: { type: number, exclusiveMinimum: 0 }
+      secretions_factor: { type: number, exclusiveMinimum: 0 }
+      heterogeneity_factor: { type: number, minimum: 1.0 }
+
+  ventilator:
+    type: object
+    additionalProperties: true   # engine filters ventilator keys to known fields
+    required:
+      - mode
+      - peep_cmH2O
+      - ie_ratio
+      - insp_flow_l_min
+    anyOf:
+      - required: [rr_bpm]
+      - required: [backup_rr_bpm]
+    properties:
+      mode:
+        type: string
+        enum: [VCV, PCV, PSV_CPAP, MANUAL_BAGGING_THEN_VCV]
+      rr_bpm: { type: number, exclusiveMinimum: 0, maximum: 80 }
+      backup_rr_bpm: { type: number, exclusiveMinimum: 0, maximum: 80 }
+      peep_cmH2O: { type: number, minimum: 0, maximum: 30 }
+      ie_ratio: { type: string, minLength: 1 }
+      insp_flow_l_min: { type: number, exclusiveMinimum: 0 }
+      inspiratory_pause_s: { type: number, minimum: 0 }
+      vt_ml_kg: { type: number, exclusiveMinimum: 0, maximum: 14 }
+      pressure_control_cmH2O_above_peep: { type: number, exclusiveMinimum: 0, maximum: 60 }
+      pressure_support_cmH2O: { type: number, exclusiveMinimum: 0, maximum: 60 }
+      trigger_sensitivity: { type: [string, "null"] }
+
+  therapies: { type: object, additionalProperties: true }
+  monitoring: { type: object, additionalProperties: true }
+  expected_direction: { type: object, additionalProperties: true }
+  expected_behavior: { type: array }
+  educational_message: { type: string }
+
+# Mode-specific required fields: the engine needs the controlled variable for the
+# selected mode (VT for volume/bagging modes, driving pressure for PCV, support
+# for PSV/CPAP).
+allOf:
+  - if:
+      properties:
+        ventilator:
+          properties: { mode: { enum: [VCV, MANUAL_BAGGING_THEN_VCV] } }
+          required: [mode]
+      required: [ventilator]
+    then:
+      properties:
+        ventilator:
+          required: [vt_ml_kg]
+  - if:
+      properties:
+        ventilator:
+          properties: { mode: { const: PCV } }
+          required: [mode]
+      required: [ventilator]
+    then:
+      properties:
+        ventilator:
+          required: [pressure_control_cmH2O_above_peep]
+  - if:
+      properties:
+        ventilator:
+          properties: { mode: { const: PSV_CPAP } }
+          required: [mode]
+      required: [ventilator]
+    then:
+      properties:
+        ventilator:
+          required: [pressure_support_cmH2O]
