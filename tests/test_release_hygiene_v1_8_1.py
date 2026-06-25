@@ -17,6 +17,8 @@ BANNED_DIR_SUFFIX = ".egg-info"
 def test_no_build_or_dist_dirs():
     offenders = []
     for p in ROOT.rglob("*"):
+        if ".venv" in p.parts:
+            continue
         if p.is_dir() and (
             p.name in BANNED_DIR_NAMES or p.name.endswith(BANNED_DIR_SUFFIX)
         ):

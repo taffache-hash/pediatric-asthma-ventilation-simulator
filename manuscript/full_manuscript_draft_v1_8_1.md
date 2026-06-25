@@ -177,8 +177,8 @@ AI-assisted tools were used during software drafting, code review, documentation
 
 Source code, scenario library, documentation, outputs, and figures are intended for public release on GitHub and archival release on Zenodo.
 
-- Repository: <INSERT FINAL GITHUB URL BEFORE SUBMISSION>
-- Archived release: <INSERT FINAL ZENODO DOI BEFORE SUBMISSION>
+- Repository: https://github.com/taffache-hash/pediatric-asthma-ventilation-simulator
+- Archived release: https://doi.org/10.5281/zenodo.20847206
 
 The final URL and DOI must be inserted only after public release and must resolve to the exact version described here (v1.8.1).
 

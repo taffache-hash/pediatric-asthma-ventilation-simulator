@@ -17,6 +17,8 @@ def test_no_loose_compiled_artifacts():
     banned = []
     for path in ROOT.rglob("*.pyc"):
         rel = path.relative_to(ROOT)
+        if ".venv" in rel.parts:
+            continue
         if "__pycache__" not in rel.parts:
             banned.append(str(rel))
     for path in ROOT.rglob("*.pyo"):
@@ -35,6 +37,8 @@ def test_no_absolute_build_paths_leak():
         "/usr/" + "bin/" + "python",
     ]
     for path in ROOT.rglob("*"):
+        if ".venv" in path.parts:
+            continue
         if path.is_file() and path.suffix in text_suffixes:
             content = path.read_text(errors="ignore")
             if any(m in content for m in markers):

@@ -1,5 +1,7 @@
 # Pediatric Status Asthmaticus Ventilation Simulator
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20847206.svg)](https://doi.org/10.5281/zenodo.20847206)
+
 **Version:** 1.8.1  
 **Scope:** educational physiology simulator for ventilated pediatric status asthmaticus  
 **Safety boundary:** not clinical decision support; not a medical device; not for patient-specific ventilator settings.

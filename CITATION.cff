@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this educational simulator in teaching, research, or derivative software, please cite it."
 title: "Pediatric Status Asthmaticus Ventilation Simulator"
 version: 1.8.1
+doi: 10.5281/zenodo.20847206
 date-released: 2026-06-24
 authors:
   - family-names: "Taffache"
