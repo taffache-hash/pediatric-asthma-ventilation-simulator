@@ -1,6 +1,7 @@
 # Pediatric Status Asthmaticus Ventilation Simulator
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20847206.svg)](https://doi.org/10.5281/zenodo.20847206)
+[![CI](https://github.com/taffache-hash/pediatric-asthma-ventilation-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/taffache-hash/pediatric-asthma-ventilation-simulator/actions/workflows/ci.yml)
 
 **Version:** 1.8.1  
 **Scope:** educational physiology simulator for ventilated pediatric status asthmaticus  
@@ -118,6 +119,13 @@ figures/v1_8_1/
 
 ## Test
 
+To run the tests, first install the development dependencies:
+
+```bash
+pip install -r requirements-dev.txt
+# or: pip install -e ".[dev]"
+```
+
 Run the full suite with pytest (recommended):
 
 ```bash
@@ -169,8 +177,9 @@ This is a low-dimensional transparent educational model. It intentionally favors
 - v1.3-alpha: physiology fix (closed-form trapping, 0.863 alveolar-ventilation constant, acute respiratory acidosis pH, explicit unsafe-physiology flags)
 - v1.4-submission-snapshot: clean release snapshot and bibliography/traceability tables
 - v1.5-remediation-snapshot: silent-chest low-EtCO2 recalibration, external-PEEP hemodynamic penalty, expected-direction tests, integrity-test fix
-- v1.8.0: severe-obstruction same-patient respiratory-rate sweep added as the primary internal-verification figure (U-shaped CO2 nadir); controlled-hypoventilation scenario retuned to show modest real intrinsic PEEP and a wide PIP-to-plateau gap; spontaneous PEEP-titration scenario fixed (realistic spontaneous rate) and external PEEP reworked as a single counterbalancing-PEEP rule for passive and spontaneous patients; physiologic-invariant/monotonicity tests, golden-value snapshot, and local sensitivity analysis added; "validation"/"experiment" wording replaced by "internal verification" throughout; post-intubation collapse moved out of the main quantitative table into an unsafe-threshold demonstration; therapy modifiers confined to supplementary; parameter traceability table added.
 - v1.7-submission-candidate: external-PEEP penalty gated to non-spontaneous patients, README test commands corrected, manuscript and figure captions rewritten against the current engine with explicit display-cap disclosure, version alignment
+- v1.8.0: severe-obstruction same-patient respiratory-rate sweep added as the primary internal-verification figure (U-shaped CO2 nadir); controlled-hypoventilation scenario retuned to show modest real intrinsic PEEP and a wide PIP-to-plateau gap; spontaneous PEEP-titration scenario fixed (realistic spontaneous rate) and external PEEP reworked as a single counterbalancing-PEEP rule for passive and spontaneous patients; physiologic-invariant/monotonicity tests, golden-value snapshot, and local sensitivity analysis added; "validation"/"experiment" wording replaced by "internal verification" throughout; post-intubation collapse moved out of the main quantitative table into an unsafe-threshold demonstration; therapy modifiers confined to supplementary; parameter traceability table added.
+- v1.8.1: maintenance release (current version) aligning version parameters across files, resolving local virtual environment test conflicts, updating docstrings, adding CI status badge, and integrating the Zenodo DOI.
 
 ## License
 

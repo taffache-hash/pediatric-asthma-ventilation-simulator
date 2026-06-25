@@ -1,7 +1,9 @@
 """Compare two scenario YAML files and export a summary delta table.
 
 Usage from project root:
-    python src/compare_strategies.py scenarios/safe_controlled_hypoventilation.yaml scenarios/high_rr_dynamic_hyperinflation.yaml
+    python src/compare_strategies.py \
+        src/pediatric_asthma_ventilation_simulator/scenarios/safe_controlled_hypoventilation.yaml \
+        src/pediatric_asthma_ventilation_simulator/scenarios/high_rr_dynamic_hyperinflation.yaml
 """
 
 from __future__ import annotations
