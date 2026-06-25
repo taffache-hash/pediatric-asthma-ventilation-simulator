@@ -1,4 +1,4 @@
-schema_version: '0.3'
+schema_version: '1.8.1'
 scenario_id: high_rr_dynamic_hyperinflation
 title: High respiratory rate causing dynamic hyperinflation
 category: ventilator_error

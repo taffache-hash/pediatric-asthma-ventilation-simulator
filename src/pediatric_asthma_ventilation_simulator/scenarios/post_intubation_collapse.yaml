@@ -1,4 +1,4 @@
-schema_version: '0.3'
+schema_version: '1.8.1'
 scenario_id: post_intubation_collapse
 title: Post-intubation collapse after aggressive ventilation
 category: peri_intubation_risk

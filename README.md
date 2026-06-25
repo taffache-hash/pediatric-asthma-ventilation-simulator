@@ -155,6 +155,7 @@ spontaneous_autopeep_peep_titration.yaml
 post_intubation_collapse.yaml
 ketamine_bronchodilation_response.yaml
 silent_chest_low_etco2.yaml
+severe_obstruction_rr_reference.yaml
 ```
 
 ## Model boundary

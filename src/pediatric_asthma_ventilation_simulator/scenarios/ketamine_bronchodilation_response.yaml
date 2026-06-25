@@ -1,4 +1,4 @@
-schema_version: '0.3'
+schema_version: '1.8.1'
 scenario_id: ketamine_bronchodilation_response
 title: Ketamine-associated gradual bronchodilation scenario
 category: therapy_response

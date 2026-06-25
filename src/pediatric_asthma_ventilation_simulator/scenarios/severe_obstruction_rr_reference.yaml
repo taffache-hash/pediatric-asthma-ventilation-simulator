@@ -1,4 +1,4 @@
-schema_version: '0.4'
+schema_version: '1.8.1'
 scenario_id: severe_obstruction_rr_reference
 title: Severe-obstruction reference patient for same-patient respiratory-rate sweep
 category: internal_verification_reference

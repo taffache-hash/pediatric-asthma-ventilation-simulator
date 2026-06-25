@@ -1,4 +1,4 @@
-schema_version: '0.4'
+schema_version: '1.8.1'
 scenario_id: spontaneous_autopeep_peep_titration
 title: Counterbalancing PEEP to unload trigger work in a spontaneously breathing patient
 category: peep_titration

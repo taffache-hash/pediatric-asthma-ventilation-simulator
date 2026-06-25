@@ -22,10 +22,20 @@ def test_no_build_or_dist_dirs():
         if p.is_dir() and (
             p.name in BANNED_DIR_NAMES or p.name.endswith(BANNED_DIR_SUFFIX)
         ):
-            # ignore anything inside a temporary pytest path
-            if ".pytest_tmp" in str(p) or "/tmp/" in str(p):
+            rel = p.relative_to(ROOT)
+            rel_str = str(rel)
+
+            # Ignore anything inside a temporary pytest path.
+            if ".pytest_tmp" in rel_str or "/tmp/" in rel_str:
                 continue
-            offenders.append(str(p.relative_to(ROOT)))
+
+            # Editable installs create src/*.egg-info locally and in CI.
+            # This is not a committed release artifact and should not fail
+            # the hygiene test.
+            if len(rel.parts) == 2 and rel.parts[0] == "src" and rel.parts[1].endswith(".egg-info"):
+                continue
+
+            offenders.append(rel_str)
     assert not offenders, f"build artifacts present in tree: {offenders}"
 
 

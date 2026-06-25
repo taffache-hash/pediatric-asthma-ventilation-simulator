@@ -1,4 +1,4 @@
-schema_version: '0.3'
+schema_version: '1.8.1'
 scenario_id: high_vt_barotrauma_risk
 title: Excessive tidal volume and plateau pressure
 category: ventilator_error
