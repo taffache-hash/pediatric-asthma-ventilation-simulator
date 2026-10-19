@@ -4,18 +4,20 @@
 **Project:** Pediatric Status Asthmaticus Ventilation Simulator  
 **Scientific core:** 1.8.1 (GitHub tag `v1.8.1-post1`; the post-release tag does not define the Android app version)  
 **Baseline source revision inspected:** `4a3c5a680dc8a781cbfe69c87f9c5a2657304e5f`  
-**Android test status:** maintainer reports an active Google Play closed-testing track; not independently verified.
+**Android test status:** maintainer-provided screenshot of Google Play Console shows closed-testing **`alpha`**, Android release **`1.0.2-educational`**, **versionCode `4`** (App Bundle), distribution rollout **100% in this closed track**, **178 selected countries/regions**, last displayed update **18 October 2026, 14:02** (timezone unspecified). Screenshot evidence establishes the visible Console status only; source, tester opt-in URL and actual installations are unverified.
 
 ## Distribution status — verified vs pending
 
 | Item | Status | Required evidence before publishing a link or binary |
 | --- | --- | --- |
 | Python core + Streamlit code | Present in this repository | Source under `src/` and `app/` |
-| Android application in Play Console | Reported by maintainer | Confirm the package ID, track, versionCode, versionName and exact AAB |
+| Android application in Play Console | Screenshot evidence: closed track `alpha`, `1.0.2-educational` / versionCode `4`, 100% track rollout, 178 countries/regions | Still confirm package ID, exact submitted AAB and build provenance |
 | Play tester opt-in link | Not provided or verified | Paste the **exact** link copied from Play Console > Closed testing > Manage track > Testers |
 | Android source matching submitted AAB | Not available in connected GitHub repositories | Import real source and record commit + source checksums |
 | GitHub pre-release and APK | Not created | Build independently reproducible, test installation, check intended publicity, then publish only if appropriate |
 | General-public Play listing | Not released | Add official Store URL only after it is genuinely available |
+
+**Important:** `Available on Google Play` and `100%` on this Console screen refer to the closed-testing track, not public release. The listed 178 countries/regions describe selected geographic distribution, not 178 active tests or installs.
 
 A closed test is **not** a general-public release. Sharing the opt-in link on a public README does not enroll readers or make them eligible for the test. For invite-only testing, prefer providing the link directly to enrolled testers rather than advertising it as a public install link.
 
@@ -35,7 +37,7 @@ In the app's Play Console: **Test and release → Testing → Closed testing →
 
 ## Open items
 
-- Exact package identifier and Play Console opt-in URL.
+- Exact package identifier and Play Console opt-in URL (versionName `1.0.2-educational`, versionCode `4` and test track `alpha` are now documented from screenshot).
 - Android source repository or project archive for the deployed build.
 - Built APK (if GitHub pre-release distribution is desired), its version and checksums.
 - Android test and scientific parity evidence.

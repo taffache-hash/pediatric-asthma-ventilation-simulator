@@ -13,9 +13,9 @@
 | --- | --- | --- |
 | Scientific Python engine | [`src/`](src/) | Open-source core, version 1.8.1 |
 | Streamlit teaching interface | [`app/streamlit_app.py`](app/streamlit_app.py) | Run locally with Streamlit |
-| Android teaching application | [`android/README.md`](android/README.md) | Google Play **closed testing** (maintainer-reported, 19 October 2026); not publicly released |
+| Android teaching application | [`android/README.md`](android/README.md) | Google Play **closed testing**, track `alpha`, Android `1.0.2-educational` (`versionCode 4`); not publicly released |
 
-**Android availability:** Access to the Google Play closed test is restricted to testers enrolled by the developer. The verified tester opt-in URL, package identifier, and Android build artifacts have **not yet been provided to this repository**, so no Play download link or GitHub APK is published here. A publicly visible URL does not grant test eligibility. See [Android distribution and verification](docs/ANDROID_DISTRIBUTION.md) for what remains to be linked and audited.
+**Android status (Play Console screenshot supplied by maintainer, 19 October 2026):** closed-test track `alpha`; release `1.0.2-educational` (`versionCode 4`); rollout **100% within the test track**, across **178 selected countries/regions**; last reported update **18 October 2026, 14:02** (time displayed in the screenshot; timezone not verified). This is **not public production availability**. Access to the Google Play closed test is restricted to testers enrolled by the developer. The verified tester opt-in URL, package identifier, and Android build artifacts have **not yet been provided to this repository**, so no Play download link or GitHub APK is published here. A publicly visible URL does not grant test eligibility. See [Android distribution and verification](docs/ANDROID_DISTRIBUTION.md) for what remains to be linked and audited.
 
 The Android app is a distinct interface to the educational simulator. This repository's existing `v1.8.1-post1` release identifies the **scientific Python package**, not an Android APK or Play release. No changes to model equations or scientific validation claims are implied by the existence of an Android build.
 

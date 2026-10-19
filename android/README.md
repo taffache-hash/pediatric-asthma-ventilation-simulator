@@ -1,6 +1,6 @@
 # Android application — closed testing
 
-**State (19 October 2026):** The project maintainer reports that an Android app for the Pediatric Status Asthmaticus Ventilation Simulator has been uploaded to Google Play Console and is distributed through a **closed test** (sometimes called alpha). This status has not been independently verified inside Play Console.
+**State (19 October 2026):** A screenshot supplied by the maintainer from Google Play Console shows the Pediatric Status Asthmaticus Ventilation Simulator in the **closed-testing `alpha` track**. Release **`1.0.2-educational`**, **versionCode `4`** (App Bundle), is reported as **available on Google Play to eligible testers**, with rollout **100% of the closed-testing track** across **178 selected countries/regions**. The last displayed update is **18 October 2026, 14:02** (screenshot-local display time; timezone not established). The screenshot verifies the visible Console status but does **not** establish a publicly accessible store listing, tester opt-in URL, package ID, Android source code, install success, or quantitative scientific parity.
 
 **Contents of this directory:** This is a documentation entry point, **not** an Android project or a distributable build. No actual Kotlin/Java, Gradle, Android manifest, embedded Python bridge, APK or AAB was available in the linked GitHub account or accompanying project files at the time of this commit. Do not mistake this directory for a buildable app.
 
