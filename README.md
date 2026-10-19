@@ -7,6 +7,18 @@
 **Scope:** educational physiology simulator for ventilated pediatric status asthmaticus  
 **Safety boundary:** not clinical decision support; not a medical device; not for patient-specific ventilator settings.
 
+## Available interfaces and Android test status
+
+| Component | Location | Distribution |
+| --- | --- | --- |
+| Scientific Python engine | [`src/`](src/) | Open-source core, version 1.8.1 |
+| Streamlit teaching interface | [`app/streamlit_app.py`](app/streamlit_app.py) | Run locally with Streamlit |
+| Android teaching application | [`android/README.md`](android/README.md) | Google Play **closed testing** (maintainer-reported, 19 October 2026); not publicly released |
+
+**Android availability:** Access to the Google Play closed test is restricted to testers enrolled by the developer. The verified tester opt-in URL, package identifier, and Android build artifacts have **not yet been provided to this repository**, so no Play download link or GitHub APK is published here. A publicly visible URL does not grant test eligibility. See [Android distribution and verification](docs/ANDROID_DISTRIBUTION.md) for what remains to be linked and audited.
+
+The Android app is a distinct interface to the educational simulator. This repository's existing `v1.8.1-post1` release identifies the **scientific Python package**, not an Android APK or Play release. No changes to model equations or scientific validation claims are implied by the existence of an Android build.
+
 ## Purpose
 
 This open-source simulator illustrates how ventilator settings and airway obstruction may influence dynamic hyperinflation, auto-PEEP, plateau-pressure surrogates, gas-exchange surrogates, and hemodynamic compromise in ventilated pediatric status asthmaticus.
@@ -63,6 +75,7 @@ clearer wording around internal verification vs clinical validation
 
 ```text
 app/          Streamlit educational interface
+android/      Android integration status and eventual application source
 src/          installable package (engine, validation, scenarios package-data) + runner scripts
 data/         evidence, parameter, calibration, audit, and release tables
 docs/         model reports, safety disclaimer, reviewer audit, release notes
